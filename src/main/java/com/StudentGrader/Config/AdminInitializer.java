@@ -5,6 +5,8 @@ import com.StudentGrader.Repository.AdminRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
@@ -20,6 +22,7 @@ public class AdminInitializer implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
+		System.out.println("In the CMDLRNR");
 		String email = "sahilshahare380@gmail.com";
 		if (repo.findByEmail(email).isEmpty()) {
 			Admin admin = new Admin();
